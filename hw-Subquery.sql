@@ -4,8 +4,10 @@ USE SalesOrdersExample;
 -- 1. Find the names of all products who retail price is less than the average
 -- retail price of all products. (1 column, 36 rows)
 -- **********************************************************************************
-
-
+--SELECT ProductName FROM Products
+--WHERE RetailPrice < (
+--  SELECT AVG(RetailPrice) AS AvgPriceOfAllProducts FROM Products;
+--)
 
 -- **********************************************************************************
 -- 2. Find the product(s) and their vendor(s) that have
@@ -20,7 +22,17 @@ USE SalesOrdersExample;
 -- List the vendor ID, vendor name, product name, and wholesale price.
 -- Sort by vendor ID. (10 rows)
 -- **********************************************************************************
+--SELECT 
+--	VendorID,
+--	Min(WholesalePrice) as LowestPrice,
+--	ProductName,
+--	WholesalePrice
+--FROM Product_Vendors
+--INNER JOIN Products ON Products.ProductNumber = Product_Vendors.ProductNumber
+--GROUP BY VendorID, ProductName, WholesalePrice
 
+--SELECT VendorID, MIN(WholesalePrice) as LowestPrice FROM Product_Vendors
+--GROUP BY VendorID
 
 
 -- **********************************************************************************
