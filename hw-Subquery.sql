@@ -23,16 +23,18 @@ USE SalesOrdersExample;
 -- Sort by vendor ID. (10 rows)
 -- **********************************************************************************
 --SELECT 
---	VendorID,
---	Min(WholesalePrice) as LowestPrice,
+--	Vendors.VendorID,
+--	VendName,
 --	ProductName,
 --	WholesalePrice
---FROM Product_Vendors
---INNER JOIN Products ON Products.ProductNumber = Product_Vendors.ProductNumber
---GROUP BY VendorID, ProductName, WholesalePrice
-
---SELECT VendorID, MIN(WholesalePrice) as LowestPrice FROM Product_Vendors
---GROUP BY VendorID
+--FROM Product_Vendors AS pv1
+--INNER JOIN Products ON Products.ProductNumber = pv1.ProductNumber
+--INNER JOIN Vendors ON pv1.VendorID = Vendors.VendorID
+--WHERE WholesalePrice = (
+--	SELECT MIN(WholesalePrice) FROM Product_Vendors AS pv2
+--	WHERE PV2.VendorID = PV1.VendorID
+--)
+--ORDER BY Vendors.VendorID
 
 
 -- **********************************************************************************
