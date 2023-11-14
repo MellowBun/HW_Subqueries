@@ -1,8 +1,11 @@
 USE SalesOrdersExample;
+--HW: Subqueries
+--HELP: 1, 2, 3, 5, 
 
 -- **********************************************************************************
 -- 1. Find the names of all products who retail price is less than the average
 -- retail price of all products. (1 column, 36 rows)
+--HELP
 -- **********************************************************************************
 --SELECT DISTINCT ProductName, AVG(RetailPrice) as AvgRetailPrice FROM Products
 --GROUP BY ProductName
@@ -18,19 +21,21 @@ USE SalesOrdersExample;
 -- **********************************************************************************
 -- 2. Find the product(s) and their vendor(s) that have
 -- the longest delivery time. (2 columns, 10 rows)
+--HELP
 -- **********************************************************************************
 --SELECT Product_Vendors.ProductNumber, VendorID FROM Products
 --RIGHT JOIN Product_Vendors ON Products.ProductNumber = Product_Vendors.ProductNumber
 --GROUP BY Product_Vendors.ProductNumber, VendorID, DaysToDeliver
 --ORDER BY DaysToDeliver ASC
 
---SELECT * FROM Product_Vendors
+--SELECT * FROM Product_Vendor
 
 
 -- **********************************************************************************
 -- 3. List the product(s) with the lowest wholesale price for each vendor.
 -- List the vendor ID, vendor name, product name, and wholesale price.
 -- Sort by vendor ID. (10 rows)
+--HELP
 -- **********************************************************************************
 --SELECT 
 --	VendorID,
@@ -62,7 +67,10 @@ USE SalesOrdersExample;
 -- **********************************************************************************
 -- 6. List the names of all customers who have ordered clothing or accessories (27 rows)
 -- **********************************************************************************
-SELECT * FROM Customers
+--SELECT * FROM Customers
+
+--SELECT * FROM Orders
+--SELECT * FROM Products
 
 
 -- **********************************************************************************
