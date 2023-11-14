@@ -4,7 +4,9 @@ USE SalesOrdersExample;
 -- 1. Find the names of all products who retail price is less than the average
 -- retail price of all products. (1 column, 36 rows)
 -- **********************************************************************************
-SELECT * FROM Products
+--SELECT DISTINCT ProductName, AVG(RetailPrice) as AvgRetailPrice FROM Products
+--GROUP BY ProductName
+--ORDER BY AvgRetailPrice ASC
 
 
 --SELECT ProductName FROM Products
@@ -17,8 +19,12 @@ SELECT * FROM Products
 -- 2. Find the product(s) and their vendor(s) that have
 -- the longest delivery time. (2 columns, 10 rows)
 -- **********************************************************************************
+--SELECT Product_Vendors.ProductNumber, VendorID FROM Products
+--RIGHT JOIN Product_Vendors ON Products.ProductNumber = Product_Vendors.ProductNumber
+--GROUP BY Product_Vendors.ProductNumber, VendorID, DaysToDeliver
+--ORDER BY DaysToDeliver ASC
 
-
+--SELECT * FROM Product_Vendors
 
 
 -- **********************************************************************************
@@ -43,18 +49,20 @@ SELECT * FROM Products
 -- 4. List all customers who live in 'WA', 'OR', or 'CA' (22 rows)
 -- **********************************************************************************
 
-
+--SELECT * FROM Customers
+--WHERE CustState IN ('WA', 'OR', 'CA')
 
 -- **********************************************************************************
 -- 5.List all customers who do not live in 'WA', 'OR', or 'CA' (22 rows)
 -- **********************************************************************************
 
-
+--SELECT * FROM Customers
+--WHERE CustState NOT IN ('WA', 'OR', 'CA')
 
 -- **********************************************************************************
 -- 6. List the names of all customers who have ordered clothing or accessories (27 rows)
 -- **********************************************************************************
-
+SELECT * FROM Customers
 
 
 -- **********************************************************************************
